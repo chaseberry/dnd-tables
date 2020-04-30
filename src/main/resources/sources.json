@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Player's Handbook",
+    "code": "PHB"
+  },
+  {
+    "name": "Xanathar's Guide to Everything",
+    "code": "XGTE"
+  },
+  {
+    "name": "Eberron Rising",
+    "code": "ER"
+  },
+  {
+    "name": "Sword Coast Adventurers Guide",
+    "code": "SCAG"
+  },
+  {
+    "name": "Unearthed Arcana",
+    "code": "UA"
+  },
+  {
+    "name": "Unearthed Arcana Modern Magic",
+    "code": "UAMM"
+  },
+  {
+    "name": "Critical Role/Matt Mercer",
+    "code": "CR"
+  },
+  {
+    "name": "Magic the Gathering",
+    "code": "MTG"
+  },
+  {
+    "name": "Dungeon Master's Guide",
+    "code": "DMG"
+  },
+  {
+    "name": "Forgotten Realms",
+    "code": "FR"
+  },
+  {
+    "name": "Guildmaster's Guide to Ravinica",
+    "code": "GGTR"
+  }
+]

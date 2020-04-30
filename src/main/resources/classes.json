@@ -1,0 +1,682 @@
+[
+  {
+    "name": "Artifacer",
+    "source": "ER",
+    "subclasses": [
+      {
+        "name": "Alchemist",
+        "source": "ER"
+      },
+      {
+        "name": "Artillerist",
+        "source": "ER"
+      },
+      {
+        "name": "Battle Smith",
+        "source": "ER"
+      },
+      {
+        "name": "Armorer",
+        "source": "UA"
+      }
+    ]
+  },
+  {
+    "name": "Barbarian",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Ancestral Guardian",
+        "source": "XGTE"
+      },
+      {
+        "name": "Battlerager",
+        "source": "FR"
+      },
+      {
+        "name": "Beast",
+        "source": "UA"
+      },
+      {
+        "name": "Berserker",
+        "source": "PHB"
+      },
+      {
+        "name": "Storm Herald",
+        "source": "XGTE"
+      },
+      {
+        "name": "Totem Warrior",
+        "source": "PHB"
+      },
+      {
+        "name": "Wild Soul",
+        "source": "UA"
+      },
+      {
+        "name": "Zealot",
+        "source": "XGTE"
+      },
+      {
+        "name": "Juggernaut",
+        "source": "CR"
+      }
+    ]
+  },
+  {
+    "name": "Bard",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "College of Creation",
+        "source": "UA"
+      },
+      {
+        "name": "College of Glamour",
+        "source": "XGTE"
+      },
+      {
+        "name": "College of Lore",
+        "source": "PHB"
+      },
+      {
+        "name": "College of Satire",
+        "source": "UA"
+      },
+      {
+        "name": "College of Swords",
+        "source": "XGTE"
+      },
+      {
+        "name": "College of Valor",
+        "source": "PHB"
+      },
+      {
+        "name": "College of Whispers",
+        "source": "XGTE"
+      },
+      {
+        "name": "College of the Maestro",
+        "source": "CR"
+      }
+    ]
+  },
+  {
+    "name": "Cleric",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Ambition Domain",
+        "source": "MTG"
+      },
+      {
+        "name": "Arcana Domain",
+        "source": "SCAG"
+      },
+      {
+        "name": "Blood Domain",
+        "source": "CR"
+      },
+      {
+        "name": "Death Domain",
+        "source": "DMG"
+      },
+      {
+        "name": "Forge Domain",
+        "source": "XGTE"
+      },
+      {
+        "name": "Grave Domain",
+        "source": "XGTE"
+      },
+      {
+        "name": "Knowledge Domain",
+        "source": "PHB"
+      },
+      {
+        "name": "Life Domain",
+        "source": "PHB"
+      },
+      {
+        "name": "Light Domain",
+        "source": "PHB"
+      },
+      {
+        "name": "Nature Domain",
+        "source": "PHB"
+      },
+      {
+        "name": "Order Domain",
+        "source": "GGTR"
+      },
+      {
+        "name": "Protection Domain",
+        "source": "UA"
+      },
+      {
+        "name": "Solidarity Domain",
+        "source": "MTG"
+      },
+      {
+        "name": "Strength Domain",
+        "source": "MTG"
+      },
+      {
+        "name": "Tempest Domain",
+        "source": "PHB"
+      },
+      {
+        "name": "Trickery Domain",
+        "source": "PHB"
+      },
+      {
+        "name": "Twilight Domain",
+        "source": "UA"
+      },
+      {
+        "name": "Unity Domain",
+        "source": "UA"
+      },
+      {
+        "name": "War Domain",
+        "source": "PHB"
+      },
+      {
+        "name": "Zeal Domain",
+        "source": "MTG"
+      },
+      {
+        "name": "City Domain",
+        "source": "UAMM"
+      }
+    ]
+  },
+  {
+    "name": "Druid",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Circle of Dreams",
+        "source": "XGTE"
+      },
+      {
+        "name": "Circle of the Land",
+        "source": "PHB"
+      },
+      {
+        "name": "Circle of the Moon",
+        "source": "PHB"
+      },
+      {
+        "name": "Circle of the Shepherd",
+        "source": "XGTE"
+      },
+      {
+        "name": "Circle of Spores",
+        "source": "GGTR"
+      },
+      {
+        "name": "Circle of Stars",
+        "source": "UA"
+      },
+      {
+        "name": "Circle of Twilight",
+        "source": "UA"
+      },
+      {
+        "name": "Circle of Wildfire",
+        "source": "UA"
+      }
+    ]
+  },
+  {
+    "name": "Fighter",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Arcane Archer",
+        "source": "XGTE"
+      },
+      {
+        "name": "Banneret",
+        "source": "SCAG"
+      },
+      {
+        "name": "Brute",
+        "source": "UA"
+      },
+      {
+        "name": "Battle Master",
+        "source": "PHB"
+      },
+      {
+        "name": "Cavalier",
+        "source": "XGTE"
+      },
+      {
+        "name": "Champion",
+        "source": "PHB"
+      },
+      {
+        "name": "Eldritch Knight",
+        "source": "PHB"
+      },
+      {
+        "name": "Monster Hunter",
+        "source": "UA"
+      },
+      {
+        "name": "Rune Knight",
+        "source": "UA"
+      },
+      {
+        "name": "Samurai",
+        "source": "XGTE"
+      },
+      {
+        "name": "Scout",
+        "source": "UA"
+      },
+      {
+        "name": "Sharpshooter",
+        "source": "UA"
+      },
+      {
+        "name": "Gunslinger",
+        "source": "CR"
+      }
+    ]
+  },
+  {
+    "name": "Monk",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Way of Mercy",
+        "source": "UA"
+      },
+      {
+        "name": "Way of the Astral Self",
+        "source": "UA"
+      },
+      {
+        "name": "Way of the Cobalt Soul",
+        "source": "CR"
+      },
+      {
+        "name": "Way of the Drunken Master",
+        "source": "XGTE"
+      },
+      {
+        "name": "Way of the Four Elements",
+        "source": "PHB"
+      },
+      {
+        "name": "Way of the Kensei",
+        "source": "XGTE"
+      },
+      {
+        "name": "Way of the Long Death",
+        "source": "SCAG"
+      },
+      {
+        "name": "Way of the Open Hand",
+        "source": "PHB"
+      },
+      {
+        "name": "Way of Shadow",
+        "source": "PHB"
+      },
+      {
+        "name": "Way of the Soul Knife",
+        "source": "UA"
+      },
+      {
+        "name": "Way of the Sun Soul",
+        "source": "XGTE"
+      },
+      {
+        "name": "Way of Tranquility",
+        "source": "UA"
+      }
+    ]
+  },
+  {
+    "name": "Paladin",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Ancients",
+        "source": "PHB"
+      },
+      {
+        "name": "Conquest",
+        "source": "XGTE"
+      },
+      {
+        "name": "Crown",
+        "source": "SCAG"
+      },
+      {
+        "name": "Devotion",
+        "source": "PHB"
+      },
+      {
+        "name": "Heroism",
+        "source": "UA"
+      },
+      {
+        "name": "Treachery",
+        "source": "UA"
+      },
+      {
+        "name": "Vengeance",
+        "source": "PHB"
+      },
+      {
+        "name": "Watchers",
+        "source": "UA"
+      },
+      {
+        "name": "Oathbreaker",
+        "source": "DMG"
+      },
+      {
+        "name": "Redemption",
+        "source": "XGTE"
+      }
+    ]
+  },
+  {
+    "name": "Ranger",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Beast Master",
+        "source": "PHB"
+      },
+      {
+        "name": "Fey Wanderer",
+        "source": "UA"
+      },
+      {
+        "name": "Gloom Stalker",
+        "source": "XGTE"
+      },
+      {
+        "name": "Horizon Walker",
+        "source": "XGTE"
+      },
+      {
+        "name": "Hunter",
+        "source": "PHB"
+      },
+      {
+        "name": "Monster Slayer",
+        "source": "XGTE"
+      },
+      {
+        "name": "Primeval Guardian",
+        "source": "UA"
+      },
+      {
+        "name": "Swarmkeeper",
+        "source": "UA"
+      }
+    ]
+  },
+  {
+    "name": "Rogue",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Arcane Trickster",
+        "source": "PHB"
+      },
+      {
+        "name": "Assassin",
+        "source": "PHB"
+      },
+      {
+        "name": "Inquisitive",
+        "source": "XGTE"
+      },
+      {
+        "name": "Mastermind",
+        "source": "XGTE"
+      },
+      {
+        "name": "Revived",
+        "source": "UA"
+      },
+      {
+        "name": "Scout",
+        "source": "XGTE"
+      },
+      {
+        "name": "Soulknife",
+        "source": "UA"
+      },
+      {
+        "name": "Soulknife Revisited",
+        "source": "UA"
+      },
+      {
+        "name": "Swashbuckler",
+        "source": "XGTE"
+      },
+      {
+        "name": "Thief",
+        "source": "PHB"
+      }
+    ]
+  },
+  {
+    "name": "Sorcerer",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Aberrant Mind",
+        "source": "UA"
+      },
+      {
+        "name": "Clockwork Soul",
+        "source": "UA"
+      },
+      {
+        "name": "Draconic Bloodline",
+        "source": "PHB"
+      },
+      {
+        "name": "Divine Soul",
+        "source": "XGTE"
+      },
+      {
+        "name": "Giant Soul",
+        "source": "UA"
+      },
+      {
+        "name": "Phoenix",
+        "source": "UA"
+      },
+      {
+        "name": "Psionic Soul",
+        "source": "UA"
+      },
+      {
+        "name": "Pyromancy",
+        "source": "MTG"
+      },
+      {
+        "name": "Sea",
+        "source": "UA"
+      },
+      {
+        "name": "Shadow",
+        "source": "XGTE"
+      },
+      {
+        "name": "Stone",
+        "source": "UA"
+      },
+      {
+        "name": "Storm",
+        "source": "XGTE"
+      },
+      {
+        "name": "Wild Magic",
+        "source": "PHB"
+      },
+      {
+        "name": "Runechild",
+        "source": "CR"
+      }
+    ]
+  },
+  {
+    "name": "Warlock",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Archfey",
+        "source": "PHB"
+      },
+      {
+        "name": "Celestial",
+        "source": "XGTE"
+      },
+      {
+        "name": "Fiend",
+        "source": "PHB"
+      },
+      {
+        "name": "Great Old One",
+        "source": "PHB"
+      },
+      {
+        "name": "Hexblade",
+        "source": "XGTE"
+      },
+      {
+        "name": "Kraken",
+        "source": "UA"
+      },
+      {
+        "name": "Lurker in the Deep",
+        "source": "UA"
+      },
+      {
+        "name": "Noble Genie",
+        "source": "UA"
+      },
+      {
+        "name": "Raven Queen",
+        "source": "UA"
+      },
+      {
+        "name": "Seeker",
+        "source": "UA"
+      },
+      {
+        "name": "Undying",
+        "source": "SCAG"
+      },
+      {
+        "name": "Ghost in the Machine",
+        "source": "UAMM"
+      }
+    ]
+  },
+  {
+    "name": "Wizard",
+    "source": "PHB",
+    "subclasses": [
+      {
+        "name": "Abjuration",
+        "source": "PHB"
+      },
+      {
+        "name": "Bladesinger",
+        "source": "SCAG"
+      },
+      {
+        "name": "Conjuration",
+        "source": "PHB"
+      },
+      {
+        "name": "Divination",
+        "source": "PHB"
+      },
+      {
+        "name": "Enchantment",
+        "source": "PHB"
+      },
+      {
+        "name": "Evocation",
+        "source": "PHB"
+      },
+      {
+        "name": "Illusion",
+        "source": "PHB"
+      },
+      {
+        "name": "Invention",
+        "source": "UA"
+      },
+      {
+        "name": "Lore Mastery",
+        "source": "UA"
+      },
+      {
+        "name": "Necromancy",
+        "source": "PHB"
+      },
+      {
+        "name": "Onomancy",
+        "source": "UA"
+      },
+      {
+        "name": "Psionics",
+        "source": "UA"
+      },
+      {
+        "name": "Theurgy",
+        "source": "UA"
+      },
+      {
+        "name": "Transmutation",
+        "source": "PHB"
+      },
+      {
+        "name": "War Magic",
+        "source": "XGTE"
+      },
+      {
+        "name": "Technomancy",
+        "source": "UAMM"
+      }
+    ]
+  },
+  {
+    "name": "Blood Hunter",
+    "source": "CR",
+    "subclasses": [
+      {
+        "name": "Order of the Ghost Slayer",
+        "source": "CR"
+      },
+      {
+        "name": "Order of the Lycan",
+        "source": "CR"
+      },
+      {
+        "name": "Order of the Mutant",
+        "source": "CR"
+      },
+      {
+        "name": "Order of the Profane Soul",
+        "source": "CR"
+      }
+    ]
+  }
+]
