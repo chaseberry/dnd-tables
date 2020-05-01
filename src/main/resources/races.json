@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Dragonborn",
+    "source": "PHB"
+  },
+  {
+    "name": "Dwarf",
+    "source": "PHB"
+  },
+  {
+    "name": "Elf",
+    "source": "PHB"
+  },
+  {
+    "name": "Gnome",
+    "source": "PHB"
+  },
+  {
+    "name": "Half-Elf",
+    "source": "PHB"
+  },
+  {
+    "name": "Half-Orc",
+    "source": "PHB"
+  },
+  {
+    "name": "Halfling",
+    "source": "PHB"
+  },
+  {
+    "name": "Human",
+    "source": "PHB"
+  },
+  {
+    "name": "Tiefling",
+    "source": "PHB"
+  },
+  {
+    "name": "Bugbear",
+    "source": "VGTM"
+  },
+  {
+    "name": "Goblin",
+    "source": "VGTM"
+  },
+  {
+    "name": "Grung",
+    "source": "OGA"
+  },
+  {
+    "name": "Hobgoblin",
+    "source": "VGTM"
+  },
+  {
+    "name": "Kobold",
+    "source": "VGTM"
+  },
+  {
+    "name": "Lizardfolk",
+    "source": "VGTM"
+  },
+  {
+    "name": "Minotaur",
+    "source": "GGTR"
+  },
+  {
+    "name": "Orc",
+    "source": "VGTM"
+  },
+  {
+    "name": "Orc of Exandria",
+    "source": "CR"
+  },
+  {
+    "name": "Orc of Eberron",
+    "source": "ER"
+  },
+  {
+    "name": "Yuan-Ti Pureblood",
+    "source": "VGTM"
+  },
+  {
+    "name": "Aarakocra",
+    "source": "EEPC"
+  },
+  {
+    "name": "Aasimar",
+    "source": "VGTM"
+  },
+  {
+    "name": "Changeling",
+    "source": "ER"
+  },
+  {
+    "name": "Firbolg",
+    "source": "VGTM"
+  },
+  {
+    "name": "Genasi",
+    "source": "EEPC"
+  },
+  {
+    "name": "Gith",
+    "source": "MTOF"
+  },
+  {
+    "name": "Goliath",
+    "source": "EEPC"
+  },
+  {
+    "name": "Kalashtar",
+    "source": "ER"
+  },
+  {
+    "name": "Kenku",
+    "source": "VGTM"
+  },
+  {
+    "name": "Shifter",
+    "source": "ER"
+  },
+  {
+    "name": "Tabaxi",
+    "source": "VGTM"
+  },
+  {
+    "name": "Tortle",
+    "source": "TTP"
+  },
+  {
+    "name": "Feral Tiefling",
+    "source": "SCAG"
+  },
+  {
+    "name": "Triton",
+    "source": "VGTM"
+  },
+  {
+    "name": "Warforged",
+    "source": "ER"
+  },
+  {
+    "name": "Warforged",
+    "source": "UA"
+  },
+  {
+    "name": "Centaur",
+    "source": "GGTR"
+  },
+  {
+    "name": "Loxodon",
+    "source": "GGTR"
+  },
+  {
+    "name": "Simic Hybrid",
+    "source": "GGTR"
+  },
+  {
+    "name": "Vedalken",
+    "source": "GGTR"
+  },
+  {
+    "name": "Locathah",
+    "source": "LR"
+  },
+  {
+    "name": "Verdan",
+    "source": "AI"
+  }
+]

@@ -8,7 +8,7 @@
     "code": "XGTE"
   },
   {
-    "name": "Eberron Rising",
+    "name": "Eberron: Rising from the Last War",
     "code": "ER"
   },
   {
@@ -40,7 +40,35 @@
     "code": "FR"
   },
   {
-    "name": "Guildmaster's Guide to Ravinica",
+    "name": "Guildmaster's Guide to Ravnica",
     "code": "GGTR"
+  },
+  {
+    "name": "Elemental Evil Player's Companion",
+    "code": "EEPC"
+  },
+  {
+    "name": "Volo's Guide to Monsters",
+    "code": "VGTM"
+  },
+  {
+    "name": "The Tortle Package",
+    "code": "TTP"
+  },
+  {
+    "name": "Mordenkainen’s Tome of Foes",
+    "code": "MTOF"
+  },
+  {
+    "name": "One Grung Above",
+    "code": "OGA"
+  },
+  {
+    "name": "Locathah Rising",
+    "code": "LR"
+  },
+  {
+    "name": "Acquisitions Incorporated",
+    "code": "AI"
   }
 ]
