@@ -57,11 +57,12 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
     println("Classes: ${classes.classes()}")
 
     loop@ while (true) {
-        val rn = get("> ")?.toLowerCase()?.split(Regex("\\s+"))
+        val input = get("> ")?.takeIf { it.isNotBlank() }?.trim() ?: continue
+        val rn = input.toLowerCase().split(Regex("\\s+"))
 
-        val arg = rn?.getOrNull(1)
+        val arg = rn.getOrNull(1)
 
-        when (rn?.getOrNull(0)) {
+        when (rn.getOrNull(0)) {
             "?", "help" -> {
                 println(
                     """
@@ -136,8 +137,35 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
                     }
                 } ?: println("No book found for '$it'")
             }
+            else -> {
+                val c = input[0]
+                if (c != '+' && c != '-') {
+                    continue@loop
+                }
+                val add = c == '+'
 
+                val match = Regex(input.drop(1), RegexOption.IGNORE_CASE)
 
+                val text = "${if (add) "Add" else "Remove"} %s %s? [y/n]: "
+
+                sources.find { match.containsMatchIn(it.book.name) || match.containsMatchIn(it.book.code) }?.let {
+                    if (get(text.format("Sourcebook", it.book.name))?.first()?.toLowerCase() == 'y') {
+                        it.enabled = add
+                    }
+                }
+
+                classes.find { match.containsMatchIn(it.dndClass.name) }?.let {
+                    if (get(text.format("Class", it.dndClass.name))?.first()?.toLowerCase() == 'y') {
+                        it.enabled = add
+                    }
+                }
+
+                races.find { match.containsMatchIn(it.race.name) }?.let {
+                    if (get(text.format("Race", it.race.name))?.first()?.toLowerCase() == 'y') {
+                        it.enabled = add
+                    }
+                }
+            }
         }
     }
 
