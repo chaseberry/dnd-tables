@@ -57,7 +57,11 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
     println("Classes: ${classes.classes()}")
 
     loop@ while (true) {
-        when (get("> ")?.toLowerCase()) {
+        val rn = get("> ")?.toLowerCase()?.split(Regex("\\s+"))
+
+        val arg = rn?.getOrNull(1)
+
+        when (rn?.getOrNull(0)) {
             "?", "help" -> {
                 println(
                     """
@@ -76,14 +80,15 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
             "q", "quit", "exit" -> break@loop
             "sources" -> println("Sources: ${sources.books()}")
             "classes" -> println("Classes: ${classes.classes()}")
-            "subs", "subclasses" -> get("Class: ")?.let { i ->
+            "subs", "subclasses" -> (arg ?: get("Class: "))?.let { i ->
+                val r = Regex(i, RegexOption.IGNORE_CASE)
                 classes.find {
-                    it.dndClass.name.toLowerCase() == i.toLowerCase()
+                    r.containsMatchIn(it.dndClass.name)
                 }?.let {
                     println("Subclasses for ${it.dndClass.name}: [${it.subclasses.filter { it.enabled }.joinToString { it.dndSubClass.name }}]")
                 } ?: println("No class '$i'")
             }
-            "+source", "+book" -> get("Source book (will match as best as can): ")?.toLowerCase()?.let {
+            "+source", "+book" -> (arg ?: get("Source book (will match as best as can): "))?.toLowerCase()?.let {
                 val r = Regex(it, RegexOption.IGNORE_CASE)
                 sources.find { r.containsMatchIn(it.book.name) || r.containsMatchIn(it.book.code) }?.let {
                     if (get("Add ${it.book.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
@@ -91,7 +96,7 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
                     }
                 } ?: println("No book found for '$it'")
             }
-            "-source", "-book" -> get("Source book (will match as best as can): ")?.toLowerCase()?.let {
+            "-source", "-book" -> (arg ?: get("Source book (will match as best as can): "))?.toLowerCase()?.let {
                 val r = Regex(it, RegexOption.IGNORE_CASE)
                 sources.find { r.containsMatchIn(it.book.name) || r.containsMatchIn(it.book.code) }?.let {
                     if (get("Remove ${it.book.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
@@ -99,7 +104,7 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
                     }
                 } ?: println("No book found for '$it'")
             }
-            "+class" -> get("Class (will match as best as can): ")?.toLowerCase()?.let {
+            "+class" -> (arg ?: get("Class (will match as best as can): "))?.toLowerCase()?.let {
                 val r = Regex(it, RegexOption.IGNORE_CASE)
                 classes.find { r.containsMatchIn(it.dndClass.name) }?.let {
                     if (get("Add ${it.dndClass.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
@@ -107,7 +112,7 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
                     }
                 } ?: println("No book found for '$it'")
             }
-            "-class" -> get("Class (will match as best as can): ")?.toLowerCase()?.let {
+            "-class" -> (arg ?: get("Class (will match as best as can): "))?.toLowerCase()?.let {
                 val r = Regex(it, RegexOption.IGNORE_CASE)
                 classes.find { r.containsMatchIn(it.dndClass.name) }?.let {
                     if (get("Remove ${it.dndClass.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
@@ -115,7 +120,7 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
                     }
                 } ?: println("No book found for '$it'")
             }
-            "+race" -> get("Race (will match as best as can): ")?.toLowerCase()?.let {
+            "+race" -> (arg ?: get("Race (will match as best as can): "))?.toLowerCase()?.let {
                 val r = Regex(it, RegexOption.IGNORE_CASE)
                 races.find { r.containsMatchIn(it.race.name) }?.let {
                     if (get("Add ${it.race.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
@@ -123,7 +128,7 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
                     }
                 } ?: println("No book found for '$it'")
             }
-            "-race" -> get("Race (will match as best as can): ")?.toLowerCase()?.let {
+            "-race" -> (arg ?: get("Race (will match as best as can): "))?.toLowerCase()?.let {
                 val r = Regex(it, RegexOption.IGNORE_CASE)
                 races.find { r.containsMatchIn(it.race.name) }?.let {
                     if (get("Remove ${it.race.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
@@ -180,7 +185,7 @@ fun createTable(classes: List<PlayerClass>, races: List<PlayerRace>, useStandard
         races.filter { it.enabled }.shuffled()
     }.shuffled()
 
-    println("## Classes")
+    println("## Races")
     println("| Roll | Race")
     println("| --- | ---")
     r.forEachIndexed { i, it -> println("| ${i + 1} | $it") }
