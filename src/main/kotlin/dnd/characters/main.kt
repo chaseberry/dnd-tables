@@ -148,19 +148,19 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
 
                 val text = "${if (add) "Add" else "Remove"} %s %s? [y/n]: "
 
-                sources.find { match.containsMatchIn(it.book.name) || match.containsMatchIn(it.book.code) }?.let {
+                sources.filter { match.containsMatchIn(it.book.name) || match.containsMatchIn(it.book.code) }.forEach {
                     if (get(text.format("Sourcebook", it.book.name))?.first()?.toLowerCase() == 'y') {
                         it.enabled = add
                     }
                 }
 
-                classes.find { match.containsMatchIn(it.dndClass.name) }?.let {
+                classes.filter { match.containsMatchIn(it.dndClass.name) }.forEach {
                     if (get(text.format("Class", it.dndClass.name))?.first()?.toLowerCase() == 'y') {
                         it.enabled = add
                     }
                 }
 
-                races.find { match.containsMatchIn(it.race.name) }?.let {
+                races.filter { match.containsMatchIn(it.race.name) }.forEach {
                     if (get(text.format("Race", it.race.name))?.first()?.toLowerCase() == 'y') {
                         it.enabled = add
                     }
