@@ -446,7 +446,7 @@
         "source": "XGTE"
       },
       {
-        "name": "Revived",
+        "name": "Phantom",
         "source": "UA"
       },
       {
@@ -566,7 +566,7 @@
         "source": "UA"
       },
       {
-        "name": "Noble Genie",
+        "name": "Genie",
         "source": "UA"
       },
       {
@@ -654,6 +654,10 @@
       {
         "name": "Technomancy",
         "source": "UAMM"
+      },
+      {
+        "name": "Scribes",
+        "source": "UA"
       }
     ]
   },
