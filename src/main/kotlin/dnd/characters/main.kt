@@ -60,9 +60,10 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
         val input = get("> ")?.takeIf { it.isNotBlank() }?.trim() ?: continue
         val rn = input.toLowerCase().split(Regex("\\s+"))
 
+        val cmd = rn.getOrNull(0) ?: continue
         val arg = rn.getOrNull(1)
 
-        when (rn.getOrNull(0)) {
+        when (cmd) {
             "?", "help" -> {
                 println(
                     """
@@ -83,86 +84,41 @@ fun cli(classes: List<PlayerClass>, sources: List<PlayerSourcebook>, races: List
             "classes" -> println("Classes: ${classes.classes()}")
             "subs", "subclasses" -> (arg ?: get("Class: "))?.let { i ->
                 val r = Regex(i, RegexOption.IGNORE_CASE)
-                classes.find {
-                    r.containsMatchIn(it.dndClass.name)
-                }?.let {
-                    println("Subclasses for ${it.dndClass.name}: [${it.subclasses.filter { it.enabled }.joinToString { it.dndSubClass.name }}]")
+                classes.find { r.containsMatchIn(it.dndClass.name) }?.let {
+                    println("Subclasses for ${it.dndClass.name}: [${it.subclasses.filter { it.enabled }
+                        .joinToString { it.dndSubClass.name }}]")
                 } ?: println("No class '$i'")
             }
-            "+source", "+book" -> (arg ?: get("Source book (will match as best as can): "))?.toLowerCase()?.let {
-                val r = Regex(it, RegexOption.IGNORE_CASE)
-                sources.find { r.containsMatchIn(it.book.name) || r.containsMatchIn(it.book.code) }?.let {
-                    if (get("Add ${it.book.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
-                        it.enabled = true
-                    }
-                } ?: println("No book found for '$it'")
-            }
-            "-source", "-book" -> (arg ?: get("Source book (will match as best as can): "))?.toLowerCase()?.let {
-                val r = Regex(it, RegexOption.IGNORE_CASE)
-                sources.find { r.containsMatchIn(it.book.name) || r.containsMatchIn(it.book.code) }?.let {
-                    if (get("Remove ${it.book.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
-                        it.enabled = false
-                    }
-                } ?: println("No book found for '$it'")
-            }
-            "+class" -> (arg ?: get("Class (will match as best as can): "))?.toLowerCase()?.let {
-                val r = Regex(it, RegexOption.IGNORE_CASE)
-                classes.find { r.containsMatchIn(it.dndClass.name) }?.let {
-                    if (get("Add ${it.dndClass.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
-                        it.enabled = true
-                    }
-                } ?: println("No book found for '$it'")
-            }
-            "-class" -> (arg ?: get("Class (will match as best as can): "))?.toLowerCase()?.let {
-                val r = Regex(it, RegexOption.IGNORE_CASE)
-                classes.find { r.containsMatchIn(it.dndClass.name) }?.let {
-                    if (get("Remove ${it.dndClass.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
-                        it.enabled = false
-                    }
-                } ?: println("No book found for '$it'")
-            }
-            "+race" -> (arg ?: get("Race (will match as best as can): "))?.toLowerCase()?.let {
-                val r = Regex(it, RegexOption.IGNORE_CASE)
-                races.find { r.containsMatchIn(it.race.name) }?.let {
-                    if (get("Add ${it.race.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
-                        it.enabled = true
-                    }
-                } ?: println("No book found for '$it'")
-            }
-            "-race" -> (arg ?: get("Race (will match as best as can): "))?.toLowerCase()?.let {
-                val r = Regex(it, RegexOption.IGNORE_CASE)
-                races.find { r.containsMatchIn(it.race.name) }?.let {
-                    if (get("Remove ${it.race.name}? [y/n]: ")?.first()?.toLowerCase() == 'y') {
-                        it.enabled = false
-                    }
-                } ?: println("No book found for '$it'")
-            }
             else -> {
-                val c = input[0]
+                val c = cmd[0]
                 if (c != '+' && c != '-') {
                     continue@loop
                 }
                 val add = c == '+'
 
-                val match = Regex(input.drop(1), RegexOption.IGNORE_CASE)
+                val cleaned = cmd.drop(1)
+
+                val (options, txt) = when (cleaned) {
+                    "race" -> races to (arg ?: get("Race (will match as best as can): "))
+                    "book", "sourcebook" -> sources to (arg ?: get("Sourcebook (will match as best as can): "))
+                    "class" -> classes to (arg ?: get("Class (will match as best as can): "))
+                    else -> {
+                        (races + sources + classes) to cleaned
+                    }
+                }
+
+                if (txt == null) {
+                    println("Must specify a lookup for $cleaned")
+                    continue@loop
+                }
+
+                val match = Regex(txt, RegexOption.IGNORE_CASE)
 
                 val text = "${if (add) "Add" else "Remove"} %s %s? [y/n]: "
 
-                sources.filter { match.containsMatchIn(it.book.name) || match.containsMatchIn(it.book.code) }.forEach {
-                    if (get(text.format("Sourcebook", it.book.name))?.first()?.toLowerCase() == 'y') {
-                        it.enabled = add
-                    }
-                }
-
-                classes.filter { match.containsMatchIn(it.dndClass.name) }.forEach {
-                    if (get(text.format("Class", it.dndClass.name))?.first()?.toLowerCase() == 'y') {
-                        it.enabled = add
-                    }
-                }
-
-                races.filter { match.containsMatchIn(it.race.name) }.forEach {
-                    if (get(text.format("Race", it.race.name))?.first()?.toLowerCase() == 'y') {
-                        it.enabled = add
+                options.filter { it.match(match) }.forEach {
+                    if (get(text.format(it.type, it.name))?.first()?.toLowerCase() == 'y') {
+                        it.enabled = false
                     }
                 }
             }
